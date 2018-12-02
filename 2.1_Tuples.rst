@@ -1,0 +1,757 @@
+
+
+
+.. raw:: html
+
+   <h1 align="center">
+
+TUPLES IN PYTHON
+
+.. raw:: html
+
+   </h1>
+
+.. raw:: html
+
+   <center>
+
+.. raw:: html
+
+   <h2>
+
+About the Dataset
+
+.. raw:: html
+
+   </h2>
+
+.. raw:: html
+
+   </center>
+
+Table of Contents
+-----------------
+
+.. raw:: html
+
+   <div class="alert alert-block alert-info" style="margin-top: 20px">
+
+.. raw:: html
+
+   <li>
+
+About the Dataset
+
+.. raw:: html
+
+   </li>
+
+.. raw:: html
+
+   <li>
+
+Tuples
+
+.. raw:: html
+
+   </li>
+
+.. raw:: html
+
+   <li>
+
+Quiz on Tuples
+
+.. raw:: html
+
+   </li>
+
+.. raw:: html
+
+   <p>
+
+.. raw:: html
+
+   </p>
+
+Estimated Time Needed: 15 min
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <hr>
+
+Imagine you received album recommendations from your friends and
+compiled all of the recomendations into a table, with specific
+information about each album.
+
+The table has one row for each movie and several columns:
+
+-  **artist** - Name of the artist
+-  **album** - Name of the album
+-  **released\_year** - Year the album was released
+-  **length\_min\_sec** - Length of the album (hours,minutes,seconds)
+-  **genre** - Genre of the album
+-  **music\_recording\_sales\_millions** - Music recording sales
+   (millions in USD) on
+   `SONG://DATABASE <http://www.song-database.com/>`__
+-  **claimed\_sales\_millions** - Album's claimed sales (millions in
+   USD) on `SONG://DATABASE <http://www.song-database.com/>`__
+-  **date\_released** - Date on which the album was released
+-  **soundtrack** - Indicates if the album is the movie soundtrack (Y)
+   or (N)
+-  **rating\_of\_friends** - Indicates the rating from your friends from
+   1 to 10
+
+The dataset can be seen below:
+
+.. raw:: html
+
+   <table font-size:xx-small style="width:25%">
+
+.. raw:: html
+
+   <tr>
+
+::
+
+    <th>Artist</th>
+    <th>Album</th> 
+    <th>Released</th>
+    <th>Length</th>
+    <th>Genre</th> 
+    <th>Music recording sales (millions)</th>
+    <th>Claimed sales (millions)</th>
+    <th>Released</th>
+    <th>Soundtrack</th>
+    <th>Rating (friends)</th>
+
+.. raw:: html
+
+   </tr>
+
+.. raw:: html
+
+   <tr>
+
+::
+
+    <td>Michael Jackson</td>
+    <td>Thriller</td> 
+    <td>1982</td>
+    <td>00:42:19</td>
+    <td>Pop, rock, R&B</td>
+    <td>46</td>
+    <td>65</td>
+    <td>30-Nov-82</td>
+    <td></td>
+    <td>10.0</td>
+
+.. raw:: html
+
+   </tr>
+
+.. raw:: html
+
+   <tr>
+
+::
+
+    <td>AC/DC</td>
+    <td>Back in Black</td> 
+    <td>1980</td>
+    <td>00:42:11</td>
+    <td>Hard rock</td>
+    <td>26.1</td>
+    <td>50</td>
+    <td>25-Jul-80</td>
+    <td></td>
+    <td>8.5</td>
+
+.. raw:: html
+
+   </tr>
+
+::
+
+    <tr>
+    <td>Pink Floyd</td>
+    <td>The Dark Side of the Moon</td> 
+    <td>1973</td>
+    <td>00:42:49</td>
+    <td>Progressive rock</td>
+    <td>24.2</td>
+    <td>45</td>
+    <td>01-Mar-73</td>
+    <td></td>
+    <td>9.5</td>
+
+.. raw:: html
+
+   </tr>
+
+::
+
+    <tr>
+    <td>Whitney Houston</td>
+    <td>The Bodyguard</td> 
+    <td>1992</td>
+    <td>00:57:44</td>
+    <td>Soundtrack/R&B, soul, pop</td>
+    <td>26.1</td>
+    <td>50</td>
+    <td>25-Jul-80</td>
+    <td>Y</td>
+    <td>7.0</td>
+
+.. raw:: html
+
+   </tr>
+
+::
+
+    <tr>
+    <td>Meat Loaf</td>
+    <td>Bat Out of Hell</td> 
+    <td>1977</td>
+    <td>00:46:33</td>
+    <td>Hard rock, progressive rock</td>
+    <td>20.6</td>
+    <td>43</td>
+    <td>21-Oct-77</td>
+    <td></td>
+    <td>7.0</td>
+
+.. raw:: html
+
+   </tr>
+
+::
+
+    <tr>
+    <td>Eagles</td>
+    <td>Their Greatest Hits (1971-1975)</td> 
+    <td>1976</td>
+    <td>00:43:08</td>
+    <td>Rock, soft rock, folk rock</td>
+    <td>32.2</td>
+    <td>42</td>
+    <td>17-Feb-76</td>
+    <td></td>
+    <td>9.5</td>
+
+.. raw:: html
+
+   </tr>
+
+::
+
+    <tr>
+    <td>Bee Gees</td>
+    <td>Saturday Night Fever</td> 
+    <td>1977</td>
+    <td>1:15:54</td>
+    <td>Disco</td>
+    <td>20.6</td>
+    <td>40</td>
+    <td>15-Nov-77</td>
+    <td>Y</td>
+    <td>9.0</td>
+
+.. raw:: html
+
+   </tr>
+
+::
+
+    <tr>
+    <td>Fleetwood Mac</td>
+    <td>Rumours</td> 
+    <td>1977</td>
+    <td>00:40:01</td>
+    <td>Soft rock</td>
+    <td>27.9</td>
+    <td>40</td>
+    <td>04-Feb-77</td>
+    <td></td>
+    <td>9.5</td>
+
+.. raw:: html
+
+   </tr>
+
+.. raw:: html
+
+   </table>
+
+.. raw:: html
+
+   <hr>
+
+.. raw:: html
+
+   <center>
+
+.. raw:: html
+
+   <h2>
+
+Tuples
+
+.. raw:: html
+
+   </h2>
+
+.. raw:: html
+
+   </center>
+
+In Python, there are different data types: string, integer and float.
+These data types can all be contained in a tuple as follows:
+
+
+
+.. code:: python
+
+    tuple1=("disco",10,1.2 )
+    tuple1
+
+The type of variable is a **tuple**.
+
+.. code:: python
+
+     type(tuple1)
+
+Each element of a tuple can be accessed via an index. The following
+table represents the relationship between the index and the items in the
+tuple. Each element can be obtained by the name of the tuple followed by
+a square bracket with the index number:
+
+
+
+We can print out each value in the tuple:
+
+.. code:: python
+
+    print( tuple1[0])
+    print( tuple1[1])
+    print( tuple1[2])
+
+We can print out the **type** of each value in the tuple:
+
+.. code:: python
+
+    print( type(tuple1[0]))
+    print( type(tuple1[1]))
+    print( type(tuple1[2]))
+
+We can also use negative indexing. We use the same table above with
+corresponding negative values:
+
+
+
+We can obtain the last element as follows (this time we will not use the
+print statement to display the values):
+
+.. code:: python
+
+    tuple1[-1]
+
+We can display the next two elements as follows:
+
+.. code:: python
+
+    tuple1[-2]
+
+.. code:: python
+
+    tuple1[-3]
+
+We can concatenate or combine tuples by using the **+** sign:
+
+.. code:: python
+
+    tuple2=tuple1+("hard rock", 10)
+    tuple2
+
+We can slice tuples obtaining multiple values as demonstrated by the
+figure below:
+
+
+
+We can slice tuples, obtaining new tuples with the corresponding
+elements:
+
+.. code:: python
+
+    tuple2[0:3]
+
+We can obtain the last two elements of the tuple:
+
+.. code:: python
+
+    tuple2[3:5]
+
+We can obtain the length of a tuple using the length command:
+
+.. code:: python
+
+    len(tuple2)
+
+This figure shows the number of elements:
+
+
+
+Consider the following tuple:
+
+.. code:: python
+
+    Ratings  =(0,9,6,5,10,8,9,6,2)
+
+We can assign the tuple to a 2nd variable:
+
+.. code:: python
+
+    Ratings1=Ratings
+    Ratings
+
+We can sort the values in a tuple and save it to a new tuple:
+
+.. code:: python
+
+    RatingsSorted=sorted(Ratings )
+    RatingsSorted
+
+A tuple can contain another tuple as well as other more complex data
+types. This process is called 'nesting'. Consider the following tuple
+with several elements:
+
+.. code:: python
+
+    NestedT =(1, 2, ("pop", "rock") ,(3,4),("disco",(1,2)))
+
+Each element in the tuple including other tuples can be obtained via an
+index as shown in the figure:
+
+
+
+.. code:: python
+
+    print("Element 0 of Tuple: ",   NestedT[0])
+    print("Element 1 of Tuple: ",  NestedT[1])
+    print("Element 2 of Tuple: ",  NestedT[2])
+    print("Element 3 of Tuple: ", NestedT[3])
+    print("Element 4 of Tuple: ", NestedT[4])
+
+We can use the second index to access other tuples as demonstrated in
+the figure:
+
+
+
+We can access the nested tuples :
+
+.. code:: python
+
+    print("Element 2,0 of Tuple: ",   NestedT[2][0])
+    print("Element 2,1 of Tuple: ",   NestedT[2][1])
+    print("Element 3,0 of Tuple: ",   NestedT[3][0])
+    print("Element 3,1 of Tuple: ",   NestedT[3][1])
+    print("Element 4,0 of Tuple: ",   NestedT[4][0])
+    print("Element 4,1 of Tuple: ",   NestedT[4][1])
+
+We can access strings in the second nested tuples using a third index:
+
+.. code:: python
+
+    NestedT[2][1][0]
+
+.. code:: python
+
+     NestedT[2][1][1]
+
+We can use a tree to visualise the process. Each new index corresponds
+to a deeper level in the tree:
+
+
+
+Similarly, we can access elements nested deeper in the tree with a
+fourth index:
+
+.. code:: python
+
+    NestedT[4][1][0]
+
+.. code:: python
+
+    NestedT[4][1][1]
+
+The following figure shows the relationship of the tree and the element
+**NestedT[4][1][1]**:
+
+<img src
+='https://ibm.box.com/shared/static/9y5s7515zwzc9v6i4f67yj3np2fv9evs.gif'width
+= 750, align = "center">
+
+.. raw:: html
+
+   <h2 align="center">
+
+Quiz on Tuples
+
+.. raw:: html
+
+   </h2>
+
+Consider the following tuple:
+
+.. code:: python
+
+    genres_tuple = ("pop", "rock", "soul", "hard rock", "soft rock", \
+                    "R&B", "progressive rock", "disco") 
+    genres_tuple
+
+Find the length of the tuple, "genres\_tuple":
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <div align="right">
+
+Click here for the solution
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="String1" class="collapse">
+
+"len(genres\_tuple)"
+
+::
+
+
+.. raw:: html
+
+   </div>
+
+Access the element, with respect to index 3:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <div align="right">
+
+Click here for the solution
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="2" class="collapse">
+
+.. raw:: html
+
+   </div>
+
+Use slicing to obtain indexes 3, 4 and 5:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <div align="right">
+
+Click here for the solution
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="3" class="collapse">
+
+.. raw:: html
+
+   </div>
+
+Find the first two elements of the tuple "genres\_tuple":
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <div align="right">
+
+Click here for the solution
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="q5" class="collapse">
+
+::
+
+    genres_tuple[0:2]
+
+Find the first index of 'disco':
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <div align="right">
+
+Click here for the solution
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="q6" class="collapse">
+
+::
+
+    genres_tuple.index("disco") 
+
+.. raw:: html
+
+   <hr>
+
+Generate a sorted List from the Tuple C\_tuple=(-5,1,-3):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <div align="right">
+
+Click here for the solution
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="q7" class="collapse">
+
+::
+
+    C_tuple = (-5,1,-3)
+    C_list = sorted(C_tuple)
+    C_list
+
+.. raw:: html
+
+   <hr>
+
+.. raw:: html
+
+   </hr>
+
+.. raw:: html
+
+   <div class="alert alert-success alertsuccess"
+   style="margin-top: 20px">
+
+.. raw:: html
+
+   <h4>
+
+[Tip] Saving the Notebook
+
+.. raw:: html
+
+   </h4>
+
+Your notebook saves automatically every two minutes. You can manually
+save by going to **File** > **Save and Checkpoint**. You can come back
+to this notebook anytime by clicking this notebook under the "**Recent
+Notebooks**" list on the right-hand side.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <hr>
+
+.. raw:: html
+
+   </hr>
+
+.. raw:: html
+
+   <div class="alert alert-success alertsuccess"
+   style="margin-top: 20px">
+
+.. raw:: html
+
+   <h4>
+
+[Tip] Notebook Features
+
+.. raw:: html
+
+   </h4>
+
+Did you know there are other **notebook options**? Click on the **>**
+symbol to the left of the notebook:
+
+.. raw:: html
+
+   <p>
+
+.. raw:: html
+
+   </p>
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <hr>
+
+.. raw:: html
+
+   </hr>
+
+
+
+About the Authors:
+==================
+
+`Joseph
+Santarcangelo <https://www.linkedin.com/in/joseph-s-50398b136/>`__ has a
+PhD in Electrical Engineering, his research focused on using machine
+learning, signal processing, and computer vision to determine how videos
+impact human cognition. Joseph has been working for IBM since he
+completed his PhD.
+
+.. raw:: html
+
+   <hr>
+
+Copyright © 2017
+`cognitiveclass.ai <cognitiveclass.ai?utm_source=bducopyrightlink&utm_medium=dswb&utm_campaign=bdu>`__.
+This notebook and its source code are released under the terms of the
+`MIT License <https://bigdatauniversity.com/mit-license/>`__.​
+
